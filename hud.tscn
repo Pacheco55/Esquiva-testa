@@ -1,0 +1,130 @@
+[gd_scene load_steps=11 format=3 uid="uid://b75kbaf74n018"]
+
+[ext_resource type="Script" path="res://HUD.gd" id="1_w2hju"]
+[ext_resource type="FontFile" uid="uid://dg170u63dbbr3" path="res://dodge_the_creeps_2d_assets/fonts/Xolonium-Regular.ttf" id="2_foj68"]
+[ext_resource type="Texture2D" uid="uid://d0s8pm46iduao" path="res://HealthIcon.png" id="4_uoap7"]
+[ext_resource type="Texture2D" uid="uid://rvor4b5qcwh1" path="res://CoinIcon.png" id="5_4dum7"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_dkofy"]
+device = -1
+keycode = 32
+unicode = 32
+
+[sub_resource type="Shortcut" id="Shortcut_l08sx"]
+events = [SubResource("InputEventKey_dkofy")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_4dwcd"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_idijn"]
+events = [SubResource("InputEventKey_4dwcd"), null]
+
+[sub_resource type="InputEventKey" id="InputEventKey_8pj8a"]
+device = -1
+keycode = 79
+unicode = 111
+
+[sub_resource type="Shortcut" id="Shortcut_8q12l"]
+events = [SubResource("InputEventKey_8pj8a")]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_w2hju")
+
+[node name="ScoreLabel" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -85.0
+offset_right = 98.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.803922, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.835294, 0.337255, 0.407843, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_foj68")
+theme_override_font_sizes/font_size = 50
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MessageLabel" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -230.0
+offset_top = -187.0
+offset_right = 228.0
+offset_bottom = -132.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0.796078, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.836489, 0.338204, 0.40897, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "ESQUIVATE-STA"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+texture_filter = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -85.0
+offset_top = -176.0
+offset_right = 92.0
+offset_bottom = -92.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_colors/font_pressed_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.447059)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 55
+shortcut = SubResource("Shortcut_l08sx")
+text = "DALE !"
+flat = true
+icon_alignment = 1
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 468.0
+offset_top = 664.0
+offset_right = 524.0
+offset_bottom = 715.0
+rotation = 2.09439
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.454902)
+shortcut = SubResource("Shortcut_idijn")
+icon = ExtResource("4_uoap7")
+flat = true
+
+[node name="Options" type="Button" parent="."]
+offset_left = 10.0
+offset_top = 641.0
+offset_right = 62.0
+offset_bottom = 692.0
+scale = Vector2(1.2, 1.2)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.431373)
+shortcut = SubResource("Shortcut_8q12l")
+icon = ExtResource("5_4dum7")
+flat = true
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]

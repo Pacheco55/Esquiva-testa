@@ -1,0 +1,119 @@
+[gd_scene load_steps=10 format=3 uid="uid://c5fi7v2243hwu"]
+
+[ext_resource type="Script" path="res://inicio/inicio_2_scene.gd" id="1_7ro40"]
+[ext_resource type="Texture2D" uid="uid://d14gj1csy6ck1" path="res://inicio/BackgroundEraser_20240614_090201950.png" id="2_p3m4m"]
+[ext_resource type="Texture2D" uid="uid://bwtlqkswccayw" path="res://inicio/BackgroundEraser_20230927_092032057.png" id="3_vjddu"]
+[ext_resource type="Texture2D" uid="uid://37jmmwdwdp7j" path="res://inicio/BackgroundEraser_20230927_091734682.png" id="4_3hfkm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lx5jq"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_t6bh5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_obrk7"]
+resource_name = "fade_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tvyai"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uvmh7"]
+_data = {
+"RESET": SubResource("Animation_t6bh5"),
+"fade_in": SubResource("Animation_obrk7"),
+"fade_out": SubResource("Animation_tvyai")
+}
+
+[node name="Inicio2_scene" type="Node2D"]
+script = ExtResource("1_7ro40")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -55.0
+offset_top = -20.0
+offset_right = 480.0
+offset_bottom = 728.0
+
+[node name="Tecatillo" type="Sprite2D" parent="ColorRect"]
+visible = false
+position = Vector2(303, 532)
+scale = Vector2(0.37037, 0.490975)
+texture = ExtResource("2_p3m4m")
+
+[node name="UPT" type="Sprite2D" parent="ColorRect"]
+visible = false
+position = Vector2(167, 340)
+scale = Vector2(0.212963, 0.163265)
+skew = 0.0872665
+texture = ExtResource("3_vjddu")
+
+[node name="IS" type="Sprite2D" parent="ColorRect"]
+visible = false
+position = Vector2(463, 340)
+scale = Vector2(0.12037, 0.109983)
+texture = ExtResource("4_3hfkm")
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.5
+offset_top = 60.0
+offset_right = 98.5
+offset_bottom = 181.0
+grow_horizontal = 2
+text = "Creado por :
+
+
+PACHECO 5"
+label_settings = SubResource("LabelSettings_lx5jq")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+offset_left = -115.0
+offset_top = -30.0
+offset_right = 488.0
+offset_bottom = 736.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uvmh7")
+}

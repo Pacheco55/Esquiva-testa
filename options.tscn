@@ -1,0 +1,145 @@
+[gd_scene load_steps=9 format=3 uid="uid://dnl1rciollgqf"]
+
+[ext_resource type="Script" path="res://Options.gd" id="1_sswry"]
+[ext_resource type="Texture2D" uid="uid://by4efpyeqjphr" path="res://inicio/loscaboselarco.jpg" id="2_yb0a8"]
+[ext_resource type="Texture2D" uid="uid://bmm2ugkp3uexn" path="res://Repeat Icons.png" id="3_kmce3"]
+[ext_resource type="Texture2D" uid="uid://d0s8pm46iduao" path="res://HealthIcon.png" id="4_2uluq"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_8s5wy"]
+device = -1
+keycode = 4194308
+
+[sub_resource type="Shortcut" id="Shortcut_56c0h"]
+events = [SubResource("InputEventKey_8s5wy")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_f8rb8"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_xlbia"]
+events = [SubResource("InputEventKey_f8rb8")]
+
+[node name="Options" type="Node2D"]
+script = ExtResource("1_sswry")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(242.5, 364.5)
+scale = Vector2(0.236816, 0.237305)
+texture = ExtResource("2_yb0a8")
+
+[node name="Oplbl" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 141.0
+offset_top = 37.0
+offset_right = 340.0
+offset_bottom = 92.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "OPCIONES"
+
+[node name="Volume" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 180.0
+offset_top = 129.0
+offset_right = 379.0
+offset_bottom = 184.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 35
+text = "Volume"
+
+[node name="HSlider" type="HSlider" parent="."]
+offset_left = 80.0
+offset_top = 206.0
+offset_right = 244.0
+offset_bottom = 222.0
+scale = Vector2(2, 2)
+
+[node name="Fulscrn" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 156.0
+offset_top = 315.0
+offset_right = 355.0
+offset_bottom = 370.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 35
+text = "Fullscreen"
+
+[node name="CheckButton" type="CheckButton" parent="."]
+offset_left = 193.0
+offset_top = 389.0
+offset_right = 237.0
+offset_bottom = 413.0
+scale = Vector2(2, 2)
+
+[node name="Atras" type="Button" parent="."]
+offset_left = 8.0
+offset_top = 623.0
+offset_right = 272.0
+offset_bottom = 887.0
+scale = Vector2(0.4, 0.4)
+theme_override_colors/icon_focus_color = Color(0, 1, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.505882)
+theme_override_colors/icon_hover_color = Color(0, 1, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 1, 0, 0.431373)
+shortcut = SubResource("Shortcut_56c0h")
+icon = ExtResource("3_kmce3")
+flat = true
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 446.0
+offset_top = 629.0
+offset_right = 502.0
+offset_bottom = 680.0
+rotation = 1.0472
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 0.494118)
+shortcut = SubResource("Shortcut_xlbia")
+icon = ExtResource("4_2uluq")
+flat = true
+
+[node name="Mute" type="Label" parent="."]
+offset_left = 193.0
+offset_top = 485.0
+offset_right = 281.0
+offset_bottom = 534.0
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 35
+text = "Mute"
+
+[node name="Mutetoggle" type="CheckButton" parent="."]
+offset_left = 193.0
+offset_top = 555.0
+offset_right = 237.0
+offset_bottom = 579.0
+scale = Vector2(2, 2)
+flat = true
+
+[connection signal="pressed" from="Atras" to="." method="_on_atras_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

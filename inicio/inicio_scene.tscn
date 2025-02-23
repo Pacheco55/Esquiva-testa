@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=3 uid="uid://bpybyyja65m4w"]
+
+[ext_resource type="Script" path="res://inicio/inicio_scene.gd" id="1_0jrek"]
+[ext_resource type="Texture2D" uid="uid://cn1chpm7k4neu" path="res://inicio/BackgroundEraser_20240630_182536810.png" id="2_w4m1x"]
+[ext_resource type="Texture2D" uid="uid://dstet1nspu08a" path="res://inicio/BackgroundEraser_20240825_182101079.png" id="3_kgg74"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1eiwc"]
+font_size = 20
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_x4dmc"]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_r7ebu"]
+resource_name = "fDE_OUT"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3arf1"]
+resource_name = "fade_in"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rsju1"]
+_data = {
+"RESET": SubResource("Animation_x4dmc"),
+"fDE_OUT": SubResource("Animation_r7ebu"),
+"fade_in": SubResource("Animation_3arf1")
+}
+
+[node name="InicioScene" type="Node2D"]
+script = ExtResource("1_0jrek")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -60.0
+offset_top = -20.0
+offset_right = 536.0
+offset_bottom = 766.0
+
+[node name="Sprite2D" type="Sprite2D" parent="ColorRect2"]
+position = Vector2(300, 452)
+scale = Vector2(0.332031, 0.285714)
+texture = ExtResource("2_w4m1x")
+
+[node name="Pblogo" type="Sprite2D" parent="ColorRect2"]
+position = Vector2(300, 260)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_kgg74")
+
+[node name="Label" type="Label" parent="ColorRect2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.0
+offset_top = 612.0
+offset_right = 86.0
+offset_bottom = 733.0
+grow_horizontal = 2
+text = "Creado por :
+
+
+PACHECO 5"
+label_settings = SubResource("LabelSettings_1eiwc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -40.0
+offset_top = -15.0
+offset_right = 536.0
+offset_bottom = 766.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rsju1")
+}
