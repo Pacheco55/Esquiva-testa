@@ -9,13 +9,27 @@
 
 *Una experiencia de esquivar obstáculos, rápida y divertida, desarrollada por Pacheco55, completamente en Godot Engine usando GDScript.*
 
+Galería de Imágenes
+<div align="center">
+
 <table>
 <tr>
 <td align="center">
-<img width="520" height="520" alt="Imagen 1" src="https://github.com/user-attachments/assets/6208ae74-a62d-4d12-ab66-eef70f944235" />
+<img width="260" height="260" alt="Imagen 1" src="https://github.com/user-attachments/assets/b582594e-f79e-42fd-bd02-e5ba3ada729d" />
 </td>
 <td align="center">
-<img width="520" height="520" alt="Imagen 2" src="https://github.com/user-attachments/assets/b582594e-f79e-42fd-bd02-e5ba3ada729d" />
+<img width="260" height="260" alt="Imagen 2" src="https://github.com/user-attachments/assets/6208ae74-a62d-4d12-ab66-eef70f944235" />
+</td>
+</tr>
+</table>
+  
+<table>
+<tr>
+<td align="center">
+<img width="260" height="260" alt="Imagen 3" src="https://github.com/user-attachments/assets/1776520b-3dbd-4d1d-8933-68daeca082ee" />
+</td>
+<td align="center">
+<img width="260" height="260" alt="Imagen 4" src="https://github.com/user-attachments/assets/d4467b55-5dbd-4003-b688-6b96fc10a620" />
 </td>
 </tr>
 </table>
@@ -23,22 +37,11 @@
 <table>
 <tr>
 <td align="center">
-<img width="520" height="520" alt="Imagen 3" src="https://github.com/user-attachments/assets/d4467b55-5dbd-4003-b688-6b96fc10a620" />
-</td>
-<td align="center">
-<img width="520" height="520" alt="Imagen 4" src="https://github.com/user-attachments/assets/1776520b-3dbd-4d1d-8933-68daeca082ee" />
-</td>
-</tr>
-</table>
-<table>
-<tr>
-<td align="center">
-<img width="520" height="520" alt="Imagen 5" src="https://github.com/user-attachments/assets/46d882e6-5297-4944-8ace-d0d94db98733" />
+<img width="260" height="260" alt="Imagen 5" src="https://github.com/user-attachments/assets/46d882e6-5297-4944-8ace-d0d94db98733" />
 </td>
 </tr>
 </table>
 </div>
-
 ---
 
 ## **¿Por qué Esquiva-testa?**
@@ -76,7 +79,7 @@ Fluidez en una amplia gama de dispositivos móviles.
 - Godot Engine (recomendado Godot 3.x o superior)
 - Lenguaje: GDScript
 
-  <img width="2700" height="2700" alt="Image" src="https://github.com/user-attachments/assets/0f9147df-bf4c-48bd-acbd-c0fea9aa738e" />
+  <img width="260" height="260" alt="Image" src="https://github.com/user-attachments/assets/0f9147df-bf4c-48bd-acbd-c0fea9aa738e" />
 
 ---
 
